@@ -11,7 +11,6 @@ nix-channel --update
 nix-shell '<home-manager>' -A install
 echo "Successfully cli home-manager"
 
-
 # Add fnm eval
 echo "Add path fnm"
 echo -e "#fnm\n `eval fnm env --use-on-cd`" >> ~/.bashrc
@@ -24,3 +23,8 @@ echo "Add path application dekstop"
 echo -e "export XDG_DATA_DIRS=$HOME/.nix-profile/share:$XDG_DATA_DIRS" >> ~/.profile
 echo "Successfully add path session and application dekstop"
 
+# Clone folder
+echo "Execute clone"
+chmod +x ./clone.sh
+sh ./clone.sh
+echo "Successfully clone folder"
