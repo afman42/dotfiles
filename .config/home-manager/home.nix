@@ -13,6 +13,7 @@
     pkgs.go
     pkgs.unrar
     pkgs.unzip
+    pkgs.sublime3
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
@@ -48,7 +49,7 @@
   # Manager then you have to manually source 'hm-session-vars.sh' located at
   # either
   #
-  #  ~/.nix-profile/etc/profile.d/hm-session-vars.sh
+  # "~/.nix-profile/etc/profile.d/hm-session-vars.sh"
   #
   # or
   #
@@ -59,8 +60,9 @@
   #  /etc/profiles/per-user/arman/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    # EDITOR = "emacs";
+    EDITOR = "nvim";
   };
+
 
   # Let Home Manager install and manage itself.
   programs = {
@@ -73,6 +75,13 @@
       userEmail = "afifarman50@gmail.com";
     };
     neovim = {
+      enable = true;
+      defaultEditor = true;
+    };
+    firefox = {
+      enable = true;
+    };
+    brave = {
       enable = true;
     };
   };
