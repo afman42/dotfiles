@@ -4,7 +4,7 @@ if [ ! -d "~/.config/nvim" ]
 then
     echo "Directory config neovim exists."
     cp -rf ~/.config/nvim/ .config/
-    echo "Neovim already clone."
+    echo "Neovim already backup."
 else
     echo "Directory config neovim does not exists."
     echo "Create directory neovim."
@@ -18,7 +18,7 @@ if [ ! -d "~/.config/home-manager" ]
 then
     echo "Directory home-manager exists."
     cp -rf ~/.config/home-manager/ .config/
-    echo "Home-manager already clone."
+    echo "Home-manager already backup."
 else
     echo "Directory home-manager does not exists."
     echo "Create directory home-manager"
