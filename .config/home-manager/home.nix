@@ -3,6 +3,9 @@
 {
   home.username = "arman";
   home.homeDirectory = "/home/arman";
+  home.sessionPath = [
+    "${config.programs.go.goPath}/bin"
+  ];
 
   home.stateVersion = "23.11"; # Please read the comment before changing.
 
@@ -10,10 +13,15 @@
     pkgs.yt-dlp
     pkgs.ffmpeg_5
     pkgs.fnm
-    pkgs.go
     pkgs.unrar
     pkgs.unzip
     pkgs.sublime3
+    # pkgs.rustup
+    # pkgs.lld
+    # pkgs.clang
+    # pkgs.pkg-config
+    # pkgs.openssl
+    pkgs.cmake
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
@@ -83,6 +91,10 @@
     };
     brave = {
       enable = true;
+    };
+    go = {
+      enable = true;
+      goPath = "~/go";
     };
   };
 }
