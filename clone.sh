@@ -35,6 +35,8 @@ then
 else
     echo "Directory backup_bash_profile does not exists."
     echo "Create directory backup_bash_profile"
+    mv ~/.bashrc ~/.bashrcc
+    mv ~/.profile ~/.profilee
     mkdir -p ~/.backup_bash_profile/
     cp -rf .backup_bash_profile/ ~/
     echo "backup_bash_profile clone folder"
