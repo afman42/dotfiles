@@ -26,3 +26,16 @@ else
     cp -rf .config/home-manager/ ~/.config/
     echo "home-manager clone folder"
 fi
+
+if [ ! -d "~/.backup_bash_profile" ] 
+then
+    echo "Directory backup_bash_profile exists."
+    cp -rf ~/.backup_bash_profile/ ./
+    echo "Home-manager already backup."
+else
+    echo "Directory backup_bash_profile does not exists."
+    echo "Create directory backup_bash_profile"
+    mkdir -p ~/.backup_bash_profile/
+    cp -rf .backup_bash_profile/ ~/
+    echo "backup_bash_profile clone folder"
+fi
