@@ -3,9 +3,6 @@
 {
   home.username = "arman";
   home.homeDirectory = "/home/arman";
-  home.sessionPath = [
-    "${config.programs.go.goPath}/bin"
-  ];
 
   home.stateVersion = "23.11"; # Please read the comment before changing.
 
@@ -27,13 +24,6 @@
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
     # # fonts?
     # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
-
-    # # You can also create simple shell scripts directly inside your
-    # # configuration. For example, this adds a command 'my-hello' to your
-    # # environment:
-    # (pkgs.writeShellScriptBin "my-hello" ''
-    #   echo "Hello, ${config.home.username}!"
-    # '')
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -56,17 +46,7 @@
   # 'home.sessionVariables'. If you don't want to manage your shell through Home
   # Manager then you have to manually source 'hm-session-vars.sh' located at
   # either
-  #
   # "~/.nix-profile/etc/profile.d/hm-session-vars.sh"
-  #
-  # or
-  #
-  #  ~/.local/state/nix/profiles/profile/etc/profile.d/hm-session-vars.sh
-  #
-  # or
-  #
-  #  /etc/profiles/per-user/arman/etc/profile.d/hm-session-vars.sh
-  #
   home.sessionVariables = {
     EDITOR = "nvim";
   };
@@ -94,7 +74,16 @@
     };
     go = {
       enable = true;
-      goPath = "~/go";
+      goPath = "go";
+    };
+    bash = {
+      enable = true;
+      profileExtra = ''
+        . "$HOME/.backup_bash_profile/.backup_profile"
+      '';
+      initExtra = ''
+        . "$HOME/.backup_bash_profile/.backup_bashrc"
+      '';
     };
   };
 }
