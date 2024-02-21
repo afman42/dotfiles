@@ -1,43 +1,30 @@
+#!/bin/bash
+
+path_repository=~/repository/dotfiles/
+
 # Clone folder to repository
+echo "Directory config neovim does not exists."
+echo "Create directory neovim."
+mkdir -p ~/.config/nvim/
+cp -rf $path_repository.config/nvim/ ~/.config/
+echo "Neovim clone folder"
 
-if [ ! -d "~/.config/nvim" ] 
-then
-    echo "Directory config neovim exists."
-    cp -rf ~/.config/nvim/ .config/
-    echo "Neovim already backup."
-else
-    echo "Directory config neovim does not exists."
-    echo "Create directory neovim."
-    mkdir -p ~/.config/nvim/
-    cp -rf .config/nvim/ ~/.config/
-    echo "Neovim clone folder"
-fi
+echo "Remove file home and replace"
+rm -f ~/.config/home-manager/home.nix
+cp -f $path_repository.config/home-manager/home.nix ~/.config/home-manager/
+echo "home-manager clone folder"
 
+echo "Directory backup_bash_profile does not exists."
+echo "Create directory backup_bash_profile"
+mv ~/.bashrc ~/.bashrcc
+mv ~/.profile ~/.profilee
+mkdir -p ~/.backup_bash_profile/
+cp -f $path_repository.backup_bash_profile/.backup_bashrc ~/.backup_bash_profile/
+cp -f $path_repository.backup_bash_profile/.backup_profile ~/.backup_bash_profile/
+echo "backup_bash_profile clone folder"
 
-if [ ! -d "~/.config/home-manager" ] 
-then
-    echo "Directory home-manager exists."
-    cp -rf ~/.config/home-manager/ .config/
-    echo "Home-manager already backup."
-else
-    echo "Directory home-manager does not exists."
-    echo "Create directory home-manager"
-    mkdir -p ~/.config/home-manager/
-    cp -rf .config/home-manager/ ~/.config/
-    echo "home-manager clone folder"
-fi
-
-if [ ! -d "~/.backup_bash_profile" ] 
-then
-    echo "Directory backup_bash_profile exists."
-    cp -rf ~/.backup_bash_profile/ ./
-    echo "Home-manager already backup."
-else
-    echo "Directory backup_bash_profile does not exists."
-    echo "Create directory backup_bash_profile"
-    mv ~/.bashrc ~/.bashrcc
-    mv ~/.profile ~/.profilee
-    mkdir -p ~/.backup_bash_profile/
-    cp -rf .backup_bash_profile/ ~/
-    echo "backup_bash_profile clone folder"
-fi
+echo "Directory nixpkgs does not exists."
+echo "Create directory nixpkgs"
+mkdir -p ~/.config/nixpkgs/
+cp -f  $path_repository.config/nixpkgs/config.nix
+echo "nixpkgs clone folder"
