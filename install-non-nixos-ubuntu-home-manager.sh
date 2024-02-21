@@ -1,13 +1,12 @@
-HOME_MANAGER_RELEASE = release-23.11
-
-sh <(curl -L https://nixos.org/nix/install) --no-daemon
+#!/bin/bash
+HOME_MANAGER_RELEASE=release-23.11
 
 nix-env -iA nix-tree
 nix-env -iA rsync
 
 # home-manager update
 echo "Add cli home-manager"
-nix-channel --add https://github.com/nix-community/home-manager/archive/${HOME_MANAGER_RELEASE}.tar.gz home-manager
+nix-channel --add https://github.com/nix-community/home-manager/archive/$HOME_MANAGER_RELEASE.tar.gz home-manager
 nix-channel --update
 
 nix-shell '<home-manager>' -A install
