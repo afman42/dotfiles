@@ -5,6 +5,7 @@
   home.homeDirectory = "/home/arman";
 
   home.stateVersion = "23.11"; # Please read the comment before changing.
+  home.enableNixpkgsReleaseCheck = false;
 
   home.packages = [
     pkgs.yt-dlp
@@ -66,12 +67,12 @@
       enable = true;
       defaultEditor = true;
     };
-    firefox = {
-      enable = true;
-    };
-    brave = {
-      enable = true;
-    };
+    #firefox = {
+    #  enable = true;
+    #};
+    #brave = {
+    #  enable = true;
+    #};
     go = {
       enable = true;
       goPath = "go";
