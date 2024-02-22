@@ -14,7 +14,6 @@
     pkgs.unrar
     pkgs.unzip
     pkgs.sublime3
-    pkgs.postgresql
     # pkgs.rustup
     # pkgs.lld
     # pkgs.clang
