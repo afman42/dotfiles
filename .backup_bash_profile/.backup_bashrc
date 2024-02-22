@@ -123,5 +123,7 @@ eval "`fnm env`"
 PATH="$GOPATH/bin:$PATH"
 
 export NIX_CONFIG="experimental-features = nix-command flakes"
-. "$HOME/.cargo/env"
+
+#rust
+# . "$HOME/.cargo/env"
 
