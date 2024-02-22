@@ -26,5 +26,5 @@ echo "backup_bash_profile clone folder"
 echo "Directory nixpkgs does not exists."
 echo "Create directory nixpkgs"
 mkdir -p ~/.config/nixpkgs/
-cp -f  $path_repository.config/nixpkgs/config.nix
+cp -f  $path_repository.config/nixpkgs/config.nix ~/.config/nixpkgs/
 echo "nixpkgs clone folder"
