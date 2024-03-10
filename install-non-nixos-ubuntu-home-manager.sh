@@ -1,8 +1,8 @@
 #!/bin/bash
 HOME_MANAGER_RELEASE=release-23.11
 
-nix-env -iA nix-tree
-nix-env -iA rsync
+# nix-env -iA nix-tree
+# nix-env -iA rsync
 
 # home-manager update
 echo "Add cli home-manager"
