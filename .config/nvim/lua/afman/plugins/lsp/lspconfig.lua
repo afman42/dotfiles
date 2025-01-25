@@ -77,7 +77,7 @@ return {
     })
 
     -- configure typescript server with plugin
-    lspconfig["tsserver"].setup({
+    lspconfig["ts_ls"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
     })
@@ -104,7 +104,7 @@ return {
           pattern = { "*.js", "*.ts" },
           callback = function(ctx)
             if client.name == "svelte" then
-              client.notify("$/onDidChangeTsOrJsFile", { uri = ctx.file })
+              client.notify("$/onDidChangeTsOrJsFile", { uri = ctx.match })
             end
           end,
         })
