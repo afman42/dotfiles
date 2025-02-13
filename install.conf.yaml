@@ -9,4 +9,4 @@
       path: ~/dotfiles/.config/nvim/**
 
 - shell:
-    - [""]
+    - ["sh install.sh,Installing Homebrew"]
