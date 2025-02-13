@@ -1,0 +1,12 @@
+- clean: ["~"]
+
+- link:
+    ~/.config/nvim/:
+      create: true
+      relink: true
+      glob: true
+      force: true
+      path: ~/dotfiles/.config/nvim/**
+
+- shell:
+    - [""]

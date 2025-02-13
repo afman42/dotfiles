@@ -1,7 +1,10 @@
 ## DOTFILES
 
-### MIX
-
 - .config
   - neovim - folder
 
+#### Symlink folder
+
+- `https://github.com/anishathalye/dotbot`: source
+- `pipx install dotbot` from `pip install pipx`
+- `dotbot -c install.conf.yaml`
