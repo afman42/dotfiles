@@ -31,3 +31,8 @@ keymap.set("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "Go to next tab" })     
 keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab" })                 --  go to previous tab
 keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" }) --  move current buffer to new tab
 -- keymap.set("n", "<leader>fa", require("material.functions").find_style(), { desc = "Chang colorscheme material" })
+
+keymap.set("n", "<Tab>", ":bnext<CR>", { desc = "Go to next buffer" })            --  go to next tab
+keymap.set("n", "<S-Tab>", ":bprevious<CR>", { desc = "Go to previous buffers" }) --  go to previous tab
+keymap.set('n', '<leader>x', ':bdelete!<CR>', { desc = "close buffer" })          -- close buffer
+keymap.set('n', '<leader>b', '<cmd> enew <CR>', { desc = "New buffer" })          -- new buffer
