@@ -41,9 +41,9 @@ return {
           extra_filetypes = { "svelte", "vue", "javascript", "typescript", "scss", "css", "html", "json" },
         }),                -- js/ts formatter
         formatting.stylua, -- lua formatter
-        formatting.isort,
-        formatting.black,
-        diagnostics.pylint,
+        -- formatting.isort,
+        -- formatting.black,
+        -- diagnostics.pylint,
         diagnostics.eslint_d.with({                                         -- js/ts linter
           condition = function(utils)
             return utils.root_has_file({ ".eslintrc.js", ".eslintrc.cjs" }) -- only enable if root has .eslintrc.js or .eslintrc.cjs
