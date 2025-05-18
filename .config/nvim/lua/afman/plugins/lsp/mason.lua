@@ -1,17 +1,24 @@
 return {
   "williamboman/mason.nvim",
+  lazy = false,
   dependencies = {
     "williamboman/mason-lspconfig.nvim",
     "WhoIsSethDaniel/mason-tool-installer.nvim",
+    "hrsh7th/cmp-nvim-lsp",
+    "neovim/nvim-lspconfig",
   },
   config = function()
-    -- import mason
+    -- import mason and mason_lspconfig
     local mason = require("mason")
-
-    -- import mason-lspconfig
     local mason_lspconfig = require("mason-lspconfig")
-
     local mason_tool_installer = require("mason-tool-installer")
+    -- -- import mason
+    -- local mason = require("mason")
+    --
+    -- -- import mason-lspconfig
+    -- local mason_lspconfig = require("mason-lspconfig")
+    --
+    -- local mason_tool_installer = require("mason-tool-installer")
 
     -- enable mason and configure icons
     mason.setup({

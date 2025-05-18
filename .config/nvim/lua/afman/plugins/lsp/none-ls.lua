@@ -39,8 +39,11 @@ return {
         --  "formatting.prettier.with({disabled_filetypes: {}})" (see null-ls docs)
         formatting.prettier.with({
           extra_filetypes = { "svelte", "vue", "javascript", "typescript", "scss", "css", "html", "json" },
-        }),                -- js/ts formatter
-        formatting.stylua, -- lua formatter
+          condition = function(utils)
+            return utils.root_has_file({ ".prettierrc.cjs", ".prettierrc.js" }) -- only enable if root has .eslintrc.js or .prettierc.js
+          end,
+        }),                                                                     -- js/ts formatter
+        formatting.stylua,                                                      -- lua formatter
         -- formatting.isort,
         -- formatting.black,
         -- diagnostics.pylint,
